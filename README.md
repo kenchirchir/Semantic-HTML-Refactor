@@ -16,14 +16,6 @@ Quotes: Converted .quote into <blockquote> with optional cite attribute.
 
 Related Content: Used <section> with a heading and consistent structure (ul > li > article).
 
-Cards: Refactored .cards and .card into a list of <article>s within a <section>.
-
-Sidebar: Converted generic sidebar into an <aside> with subsections.
-
-Accessibility:
-
-Added a skip link (Skip to main content) pointing to #main.
-
 Provided proper <label> for the search input.
 
 Added aria-label to nav elements without visible headings.
