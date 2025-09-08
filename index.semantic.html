@@ -1,17 +1,35 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Refactored Semantic Page</title>
-</head>
-<body>
-  <!-- Skip link for accessibility -->
-  <a href="#main" class="skip-link">Skip to main content</a>
 
-  <!-- Page Header -->
+<head>
+  <meta charset="utf-8">
+  <title>My Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* Visible skip link */
+    .skip {
+      position: absolute;
+      left: -9999px;
+      top: auto;
+    }
+
+    .skip:focus {
+      left: 1rem;
+      top: 1rem;
+      background: #000;
+      color: #fff;
+      padding: .5rem;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Skip link -->
+  <a class="skip" href="#main">Skip to main content</a>
+
+  <!-- Header with navigation -->
   <header>
-    <h1>Website Title</h1>
+    <h1 class="logo">My Blog</h1>
     <nav aria-label="Primary">
       <ul>
         <li><a href="#">Home</a></li>
@@ -20,116 +38,83 @@
         <li><a href="#">Contact</a></li>
       </ul>
     </nav>
-
-    <!-- Search form with accessible label -->
-    <form role="search" aria-label="Site search">
-      <label for="search-input">Search:</label>
-      <input id="search-input" type="search" name="q" />
-      <button type="submit">Search</button>
-    </form>
   </header>
 
-  <!-- Sidebar -->
-  <aside>
-    <section>
-      <h2>About This Site</h2>
-      <p>This is an accessible, semantic HTML refactor example.</p>
-    </section>
-    <section>
-      <h2>Categories</h2>
-      <ul>
-        <li><a href="#">Tech</a></li>
-        <li><a href="#">Design</a></li>
-        <li><a href="#">Culture</a></li>
-      </ul>
-    </section>
-  </aside>
+  <div class="container">
+    <!-- Main content -->
+    <main id="main">
+      <article>
+        <header>
+          <h2>The Joy of Semantics</h2>
+          <p class="meta">
+            By <span>Jane Doe</span> •
+            <time datetime="2025-09-02">2 Sept 2025</time>
+          </p>
+        </header>
 
-  <!-- Main Content -->
-  <main id="main">
-    <!-- Article -->
-    <article>
-      <header>
-        <h2>Main Article Title</h2>
-        <p class="meta">
-          <time datetime="2025-09-07">September 7, 2025</time> · By
-          <span class="author">Kenneth Chirchir</span>
-        </p>
-      </header>
+        <figure>
+          <img src="hero.jpg" alt="Semantic HTML illustration">
+          <figcaption>Using semantic HTML improves meaning and accessibility</figcaption>
+        </figure>
 
-      <figure>
-        <img src="image.jpg" alt="Descriptive alt text of the image" />
-        <figcaption>Image caption explaining its relevance</figcaption>
-      </figure>
+        <section>
+          <p>HTML provides elements that convey meaning…</p>
+          <p>Using the right tags improves accessibility and SEO…</p>
+        </section>
 
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae
-        ultrices turpis. Duis euismod risus et ipsum elementum, a tincidunt sem
-        volutpat.
-      </p>
+        <blockquote>
+          “Good markup is invisible, but invaluable.”
+        </blockquote>
 
-      <blockquote cite="https://example.com/article">
-        <p>
-          “This is a highlighted quotation from the article that provides
-          insight.”
-        </p>
-      </blockquote>
+        <section aria-labelledby="related-heading">
+          <h3 id="related-heading">Related</h3>
+          <ul>
+            <li>
+              <article>
+                <h4><a href="#">Why headings matter</a></h4>
+                <p>A quick primer on h1–h6</p>
+              </article>
+            </li>
+            <li>
+              <article>
+                <h4><a href="#">Landmarks 101</a></h4>
+                <p>header, nav, main…</p>
+              </article>
+            </li>
+          </ul>
+        </section>
+      </article>
+    </main>
 
-      <section aria-labelledby="related-heading">
-        <h3 id="related-heading">Related Articles</h3>
-        <ul>
-          <li>
-            <article>
-              <h4><a href="#">How Semantic HTML Improves Accessibility</a></h4>
-              <p>A quick dive into why semantics matter for screen readers.</p>
-            </article>
-          </li>
-          <li>
-            <article>
-              <h4><a href="#">Top 10 HTML5 Elements You Should Use</a></h4>
-              <p>Learn about modern HTML5 semantic structures.</p>
-            </article>
-          </li>
-        </ul>
+    <!-- Sidebar -->
+    <aside>
+      <section class="search">
+        <h3>Search</h3>
+        <form action="#" method="get">
+          <label for="search-input">Search this site:</label>
+          <input id="search-input" type="text" name="q" placeholder="Find…">
+          <button type="submit">Go</button>
+        </form>
       </section>
-    </article>
 
-    <!-- Cards Section -->
-    <section aria-labelledby="cards-heading">
-      <h2 id="cards-heading">Featured Topics</h2>
-      <ul>
-        <li>
-          <article>
-            <h3><a href="#">Design Systems</a></h3>
-            <p>How to create reusable UI components.</p>
-          </article>
-        </li>
-        <li>
-          <article>
-            <h3><a href="#">Web Accessibility</a></h3>
-            <p>Making the web usable for everyone.</p>
-          </article>
-        </li>
-        <li>
-          <article>
-            <h3><a href="#">Performance Optimization</a></h3>
-            <p>Tips for faster, more efficient websites.</p>
-          </article>
-        </li>
-      </ul>
-    </section>
-  </main>
+      <section class="about-widget">
+        <h3>About this site</h3>
+        <p>We publish web standards tips weekly.</p>
+      </section>
+    </aside>
+  </div>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Kenneth Chirchir. All rights reserved.</p>
     <nav aria-label="Footer">
       <ul>
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Terms</a></li>
       </ul>
     </nav>
+    <p>Contact: <a href="mailto:info@example.com">info@example.com</a></p>
   </footer>
 </body>
+
 </html>
 
